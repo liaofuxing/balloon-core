@@ -44,7 +44,6 @@
     如果想将一个list转化为以某个符号隔开的字符串
     @code {
         // 例子 list = [1 2 3 4]
-        
         System.out.println(CollectionUtils.collectionConvertStringJoiner(list，",")); 
           
         // 输出
