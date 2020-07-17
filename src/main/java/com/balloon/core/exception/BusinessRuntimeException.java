@@ -2,8 +2,10 @@ package com.balloon.core.exception;
 
 /**
  * 业务通用运行时异常
+ *
+ * @author liaofuxing
  */
-public class BusinessRuntimeException extends RuntimeException{
+public class BusinessRuntimeException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     /**

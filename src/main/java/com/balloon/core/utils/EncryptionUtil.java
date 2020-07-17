@@ -18,7 +18,7 @@ public class EncryptionUtil {
      * @return String 转化16进制的字符串
      * @throws NoSuchAlgorithmException 异常
      */
-    private static String enCodeMD5(String inputText) throws NoSuchAlgorithmException {
+    public static String enCodeMD5(String inputText) throws NoSuchAlgorithmException {
         return hex(MessageDigest.getInstance("md5").digest(inputText.getBytes()));
     }
 
@@ -29,7 +29,7 @@ public class EncryptionUtil {
      * @return String 转化16进制的字符串
      * @throws NoSuchAlgorithmException 异常
      */
-    private static String enCodeSHA256(String inputText) throws NoSuchAlgorithmException {
+    public static String enCodeSHA256(String inputText) throws NoSuchAlgorithmException {
         return hex(MessageDigest.getInstance("SHA-256").digest(inputText.getBytes()));
     }
 
@@ -40,7 +40,7 @@ public class EncryptionUtil {
      * @param inputText 输入的字符串
      * @return 返回加密后的字符串
      */
-    private static String enCodeBase64(String inputText) {
+    public static String enCodeBase64(String inputText) {
         //Base64 加密
         byte[] bytes = inputText.getBytes();
         return Base64.getEncoder().encodeToString(bytes);
@@ -52,7 +52,7 @@ public class EncryptionUtil {
      * @param base64Str base64Str 加密后的字符串
      * @return 返回解密后的字符串
      */
-    private static String deCodeBase64(String base64Str) {
+    public static String deCodeBase64(String base64Str) {
         byte[] decoded = Base64.getDecoder().decode(base64Str);
         return new String(decoded);
     }
@@ -63,7 +63,7 @@ public class EncryptionUtil {
      * @param arr 需要转16进制的byte数组
      * @return 16进制字符串
      */
-    private static String hex(byte[] arr) {
+    public static String hex(byte[] arr) {
         StringBuilder sb = new StringBuilder();
         for (byte b : arr) {
             sb.append(Integer.toHexString((b & 0xFF) | 0x100), 1, 3);

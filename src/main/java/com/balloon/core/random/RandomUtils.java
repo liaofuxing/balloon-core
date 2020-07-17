@@ -18,7 +18,7 @@ public class RandomUtils {
      * @param max 区间最大值 包含
      * @return Integer 返回生成的随机数
      */
-    private static Integer randomNumberMinToMax(Integer min, Integer max) {
+    public static Integer randomNumberMinToMax(Integer min, Integer max) {
         // int num = ThreadLocalRandom.current().ints(min, max). 生成规则是 min <= num < max
         // 所以想要包含 max 的数值必须使用 max + 1
         return ThreadLocalRandom.current().ints(min, max + 1).findFirst().getAsInt();
@@ -29,7 +29,7 @@ public class RandomUtils {
      *
      * @return String 返回生成的随机字母
      */
-    private static String randomLetterUpperCase() {
+    public static String randomLetterUpperCase() {
         return randomLetterUpperCaseMinToMax("A", "Z");
     }
 
@@ -38,7 +38,7 @@ public class RandomUtils {
      *
      * @return String 返回生成的随机字母
      */
-    private static String randomLetterLowerCase() {
+    public static String randomLetterLowerCase() {
         return randomLetterLowerCaseMinToMax("a", "z");
     }
 
@@ -49,7 +49,7 @@ public class RandomUtils {
      * @param maxLetter 区间最大字符 包含   ps:支持大小写，自动转换为大写
      * @return String 返回生成的随机字母
      */
-    private static String randomLetterUpperCaseMinToMax(String minLetter, String maxLetter) {
+    public static String randomLetterUpperCaseMinToMax(String minLetter, String maxLetter) {
         String letter;
         try {
             char minLetterChar = minLetter.toUpperCase().toCharArray()[0];
@@ -71,7 +71,7 @@ public class RandomUtils {
      * @param maxLetter 区间最大字符 包含   ps:支持大小写，自动转换为小写
      * @return String 返回生成的随机字母
      */
-    private static String randomLetterLowerCaseMinToMax(String minLetter, String maxLetter) {
+    public static String randomLetterLowerCaseMinToMax(String minLetter, String maxLetter) {
         String letter;
         try {
             char minLetterChar = minLetter.toLowerCase().toCharArray()[0];
@@ -92,7 +92,7 @@ public class RandomUtils {
      * @param len 生成长度
      * @return String 返回生成的随机长的数字字母组合字符串
      */
-    private static String randomLetterOrNumber(Integer len) {
+    public static String randomLetterOrNumber(Integer len) {
         StringBuilder stringBuffer = new StringBuilder();
         for (int i = 0; i < len; i++){
             switch(randomNumberMinToMax(1, 3)){
@@ -116,7 +116,7 @@ public class RandomUtils {
      * @param len 生成长度
      * @return String 返回生成的随机长的数字字母组合字符串
      */
-    private static String randomNumber(Integer len) {
+    public static String randomNumber(Integer len) {
         StringBuilder stringBuffer = new StringBuilder();
         for (int i = 0; i < len; i++){
             stringBuffer.append(randomNumberMinToMax(0, 9));
@@ -130,7 +130,7 @@ public class RandomUtils {
      * @param len 生成长度
      * @return String 返回生成的随机长的数字字母组合字符串
      */
-    private static String randomLetterOnlyUpperCaseLen(Integer len) {
+    public static String randomLetterOnlyUpperCaseLen(Integer len) {
         StringBuilder stringBuffer = new StringBuilder();
         for (int i = 0; i < len; i++){
             stringBuffer.append(randomLetterUpperCase());
@@ -144,7 +144,7 @@ public class RandomUtils {
      * @param len 生成长度
      * @return String 返回生成的随机长的数字字母组合字符串
      */
-    private static String randomLetterOnlyLowerCaseLen(Integer len) {
+    public static String randomLetterOnlyLowerCaseLen(Integer len) {
         StringBuilder stringBuffer = new StringBuilder();
         for (int i = 0; i < len; i++){
             stringBuffer.append(randomLetterLowerCase());
@@ -158,7 +158,7 @@ public class RandomUtils {
      * @param len 生成长度
      * @return String 返回生成的随机长的数字字母组合字符串
      */
-    private static String randomLetterUpperCaseOrLowerCaseLen(Integer len) {
+    public static String randomLetterUpperCaseOrLowerCaseLen(Integer len) {
         StringBuilder stringBuffer = new StringBuilder();
         for (int i = 0; i < len; i++){
             switch(randomNumberMinToMax(1, 2)){
