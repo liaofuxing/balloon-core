@@ -35,7 +35,7 @@
     如果要想使用 RandomUtils 生成一个长度为10随机字符串，包含字母和数字不区分大小
     @code {
         // 例子 
-        System.out.println(RandomUtils.randomNumber(6)); 
+        System.out.println(RandomUtils.randomNumber(10)); 
           
         // 输出
         gmd40Bk929       
