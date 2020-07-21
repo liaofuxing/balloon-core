@@ -58,7 +58,7 @@ public class ObFactory {
      * @param key key值
      * @return 返回的主题
      */
-    public static Subject generateSubject(String key) {
+    public static Subject createSubject(String key) {
         ConcreteSubject concreteSubject = new ConcreteSubject();
         add(key, concreteSubject);
         return concreteSubject;
@@ -73,7 +73,7 @@ public class ObFactory {
      */
     public static Subject getOrCreate(String key) {
         if (get(key) == null) {
-            return generateSubject(key);
+            return createSubject(key);
         }
         return get(key);
     }
