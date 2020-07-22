@@ -66,7 +66,7 @@ public class ObFactory {
 
     /**
      * 根据 key 查找主题.
-     * <p>如果没有找到, 就通过静态工场创建一个主题,并加入工厂, 通过 key 值管理(@param key)这个主题</p>
+     * <p>如果没有找到, 就通过静态工场创建一个主题,并加入工厂, 通过 key 值管理(@param key)这个主题, 并返回这个主题</p>
      *
      * @param key key值
      * @return 返回的主题

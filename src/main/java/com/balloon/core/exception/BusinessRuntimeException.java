@@ -36,6 +36,17 @@ public class BusinessRuntimeException extends RuntimeException {
         this.cause = cause;
     }
 
+    /**
+     * 使用通用化的异常枚举接口来构建业务运行时异常
+     *
+     * @param exceptionEnums 需要提供的异常枚举
+     */
+    public BusinessRuntimeException(IBaseExceptionEnums exceptionEnums) {
+        super(exceptionEnums.getMsg());
+        this.code = exceptionEnums.getCode();
+        this.message = exceptionEnums.getMsg();
+    }
+
     public int getCode() {
         return code;
     }

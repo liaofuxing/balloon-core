@@ -20,7 +20,7 @@ public interface ObServer {
 
 
     /**
-     * 观察者执行接口
+     * 观察者被通知后执行的方法
      *
      * @param data 请求的数据
      * @throws ExecutionException   执行异常
