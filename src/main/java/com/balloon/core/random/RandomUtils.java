@@ -1,5 +1,8 @@
 package com.balloon.core.random;
 
+import com.balloon.core.exception.enums.BalloonCoreExceptionEnums;
+import com.balloon.core.exception.BusinessRuntimeException;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -59,7 +62,7 @@ public class RandomUtils {
             letter = String.valueOf(randomLetterChar);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ClassCastException("传入的最小参数必须比最大参数小,并且只能是A-Z或a-z之间的字符串,不区分大小写.");
+            throw new BusinessRuntimeException(BalloonCoreExceptionEnums.PARAMETER_ERROR);
         }
         return letter;
     }
@@ -81,7 +84,7 @@ public class RandomUtils {
             letter = String.valueOf(randomLetterChar);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
-            throw new IllegalArgumentException("传入的最小参数必须比最大参数小,并且只能是A-Z或a-z之间的字符串,不区分大小写.");
+            throw new BusinessRuntimeException(BalloonCoreExceptionEnums.PARAMETER_ERROR);
         }
         return letter;
     }
@@ -108,6 +111,48 @@ public class RandomUtils {
             }
         }
        return stringBuffer.toString();
+    }
+
+    /**
+     * 随机生成任意长度的数字大写字母组合字符串
+     *
+     * @param len 生成长度
+     * @return String 返回生成的随机长的数字字母组合字符串
+     */
+    public static String randomLetterUpperCaseOrNumber(Integer len) {
+        StringBuilder stringBuffer = new StringBuilder();
+        for (int i = 0; i < len; i++){
+            switch(randomNumberMinToMax(1, 3)){
+                case 1 :
+                    stringBuffer.append(randomNumberMinToMax(0, 9));
+                    break;
+                case 2 :
+                    stringBuffer.append(randomLetterUpperCase());
+                    break;
+            }
+        }
+        return stringBuffer.toString();
+    }
+
+    /**
+     * 随机生成任意长度的数字小写字母组合字符串
+     *
+     * @param len 生成长度
+     * @return String 返回生成的随机长的数字字母组合字符串
+     */
+    public static String randomLetterLowerCaseOrNumber(Integer len) {
+        StringBuilder stringBuffer = new StringBuilder();
+        for (int i = 0; i < len; i++){
+            switch(randomNumberMinToMax(1, 3)){
+                case 1 :
+                    stringBuffer.append(randomNumberMinToMax(0, 9));
+                    break;
+                case 2 :
+                    stringBuffer.append(randomLetterLowerCase());
+                    break;
+            }
+        }
+        return stringBuffer.toString();
     }
 
     /**
