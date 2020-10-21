@@ -122,7 +122,7 @@ public class RandomUtils {
     public static String randomLetterUpperCaseOrNumber(Integer len) {
         StringBuilder stringBuffer = new StringBuilder();
         for (int i = 0; i < len; i++){
-            switch(randomNumberMinToMax(1, 3)){
+            switch(randomNumberMinToMax(1, 2)){
                 case 1 :
                     stringBuffer.append(randomNumberMinToMax(0, 9));
                     break;
@@ -143,7 +143,7 @@ public class RandomUtils {
     public static String randomLetterLowerCaseOrNumber(Integer len) {
         StringBuilder stringBuffer = new StringBuilder();
         for (int i = 0; i < len; i++){
-            switch(randomNumberMinToMax(1, 3)){
+            switch(randomNumberMinToMax(1, 2)){
                 case 1 :
                     stringBuffer.append(randomNumberMinToMax(0, 9));
                     break;
